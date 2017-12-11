@@ -10,29 +10,27 @@ public class Solution {
 		     for(int i=L;i<=R;i++)
 		     result.add(a.get(T).get(i));
 		     T++;
-		     direction=1;
 		     }
 		     
 		     if(direction==1){
 		     for(int i=T; i<=B;i++)
 		     result.add(a.get(i).get(R));
 		     R--;
-		     direction=2;
 		     }
 		     
 		     if(direction==2){
 		     for(int i=R; i>=L;i--)
 		     result.add(a.get(B).get(i));
 		     B--;
-		     direction=3;
 		     }
 		     
 		     if(direction==3){
 		     for(int i=B; i>=T;i--)
 		     result.add(a.get(i).get(L));
 		     L++;
-		     direction=0;
 		     }
+		     
+		     direction=(direction+1)%4;
 		 }
 		 return result;
 	}
